@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 45: is not terminated with a newline. (Check strings and parenthesis.)
-(Perhaps you left out a " at the end of the first line.)
-        mc "Нуу...""
+File "game/script.rpy", line 102: expected statement.
+    rep+=1
+       ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Thu Jun 19 19:59:47 2025
+Fri Jun 20 00:35:26 2025
