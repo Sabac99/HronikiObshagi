@@ -3,7 +3,7 @@ define m = Character('Мама')
 define k = Character('Елена Васильевна')
 define mc = Character('Рома')
 define v = Character('Ваня')
-
+define sis = Character('Система')
 # Определение Бэка.
 image bedroom_Irk = im.Scale("bg/bedroom_Irk.png",1920,1080)
 
@@ -17,7 +17,6 @@ label start:
     #17.06.2024, родной город ГГ
     scene bedroom_Irk
     with dissolve
-
     m "ДА КАКОЕ ЖЕ ТЫ НЕБЛАГОДАРНОЕ ГОВ-..."
     with hpunch
     with vpunch
@@ -70,8 +69,10 @@ label start:
         "ТПУ":
             jump TPU3108
         "ТУСУР":
-            pass
-#КНОПКА None ОТКАЗЫВАЕТСЯ РАБОТАТЬ Я РОТ ЕЁ ЕБАЛ.
+            sis "НУ И ПИЗДУЙ В СВОЙ ТУСУР."
+            return
+            #pass
+            #КНОПКА None(Null action) ОТКАЗЫВАЕТСЯ РАБОТАТЬ Я РОТ ЕЁ ЕБАЛ.
 
 # Игрок выбрал поступить в ТПУ, 31.08:
 label TPU3108:

@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 73: expected statement.
-    None
-        ^
+File "game/script.rpy", line 69: reached end of line when expecting ':'.
+    while $ tpu == 0
+                    ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Fri Jun 20 00:49:06 2025
+Fri Jun 20 20:48:20 2025
