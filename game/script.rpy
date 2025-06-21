@@ -228,4 +228,5 @@ label Sep1time419Alice:
     with vpunch
     "*Сердце бешено колотилось*"
     "КАКОГО!?"
+
     #play sound "heartbeat.wav" loop
