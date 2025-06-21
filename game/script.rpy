@@ -14,8 +14,7 @@ define mc = Character('Рома')
 define a = Character('Алиса')
 
 # Определение Бэков.
-image bedroom_Irk = im.Scale("bg/bg upd/irk.png",1920,1080)
-
+image bedroom_Irk = im.Scale("bg/bedroom_Irk.png",1920,1080)
 
 #просто обновить картинки, меняя только файлфы в папке, оставляя такое же название ai на картинке я уберу
 image coridorday = im.Scale("bg/coridorev.png",1920,1080) #Коридор день
