@@ -14,10 +14,18 @@ define mc = Character('Рома')
 define a = Character('Алиса')
 
 # Определение Бэков.
-image bedroom_Irk = im.Scale("bg/bedroom_Irk.png",1920,1080)
-image coridorev = im.Scale("bg/coridorev.png",1920,1080) #Коридор вечер
-image room_511 = im.Scale("bg/room_511.png",1920,1080)
-image room_510_bed_night  = im.Scale("bg/room_510_bed_night.png",1920,1080)
+image bedroom_Irk = im.Scale("bg upd/irk.png",1920,1080)
+
+
+#просто обновить картинки, меняя только файлфы в папке, оставляя такое же название
+image coridorday = im.Scale("bg upd/kor dat.png",1920,1080) #Коридор вечер
+image coridornight = im.Scale("bg upd/kor night.png",1920,1080) #Коридор вечер
+
+image room_511_night = im.Scale("bg upd/511 night.png",1920,1080)
+image room_511_day = im.Scale("bg upd/511 day.png",1920,1080)
+
+image room_510_bed_night  = im.Scale("bg upd/510 day.png",1920,1080) #сменить на ночной
+image room_510_bed_day  = im.Scale("bg upd/510 day.png",1920,1080)
 # Определение Спрайтов Алисы.
 image Alice_normal = im.Scale("sprites/Alice/Alice_normal.png",559,946)
 image Alice_smile = im.Scale("sprites/Alice/Alice_smile.png",559,946)
@@ -84,7 +92,7 @@ label start:
     with hpunch
     with vpunch
     # Звук хлопока дверью
-    "Как же меня это осточертело. Постоянно споры, ссоры. А главное, из-за всякой херни!"
+    "Как же мне это осточертело. Постоянно споры, ссоры. А главное, из-за всякой херни!"
     "Ох... ладно..."
     #with Скрип стула
     "*бззз*"
@@ -143,7 +151,7 @@ label start:
 label TPU3108:
     "Картинка-переход 31.08.2024, Томск, общежитие №14"
     $ rep = 0
-    scene coridorev with dissolve #поменять на день
+    scene coridorday with dissolve #поменять на день поменял
     kom "Так, смотри, дубликат ключа надо сделать. Оригиналом. Я его дам.\
     Дубликат делает ключник. Он находится возле шаурмечки. Ключнику нужны деньги. Денег я не дам."
     "У меня стойкое ощущение дежавю..."
@@ -193,7 +201,7 @@ label TPU3108:
             mc "Галина Олеговна, я пойду. Мне ещё дубликат делать."
             "*Пока коменда не успела опомниться, я быстро прошмыгнул в свое новое жилье.*"
     mc "Привет, новая жизнь."
-    scene room_511 with dissolve #ЗАГЛУШКА
+    scene room_511_day with dissolve #ЗАГЛУШКА сменил
     if rep == 1:
         scene black with dissolve
         jump Sep1time419Alice
@@ -201,9 +209,9 @@ label TPU3108:
         return
 label Sep1time419Alice:
     "Картинка-переход 01.09.2024, Общежитие №14, комната 510"
-    scene room_510_bed_night with dissolve
+    scene room_510_bed_day with dissolve
     mc "Агх..."
-    scene room_510_bed_night at heartbeat_advanced
+    scene room_510_bed_day at heartbeat_advanced
     "*Невольно, мои руки моментально прикоснулись к голове*"
     mc "Нда... Видать вчера я все-таки перебрал..."
     mc "Где это я? Сколько сейчас времени?"
@@ -215,7 +223,7 @@ label Sep1time419Alice:
     "*Я заметил Алису, мирно посапывающую в своей постели*"
     "*Достав свой телефон я посмотрел на красующиеся там цифры. 4.19*"
     "*Аккуратно, чтобы не разбудить свою новую знакомую, я поднялся с кровати и побрел в нашу с парнями комнату*"
-    scene coridorev with dissolve  #поменять на ночной корридор
+    scene coridornight with dissolve  #поменять на ночной корридор сменил
     "Интересный у меня первый день в этом городе получился, ничего не скажешь…"
     scene black
     "Ладно, щас водички попить и…-"
@@ -223,7 +231,7 @@ label Sep1time419Alice:
     mc "БЛЯТЬ!"
     "*За дверью, я узрел ужасающую картину: Комната была в полнейшем беспорядке, на стенах была размазана кровь, а на полу начерчена пентаграмма*"
     "*Я быстро захлопнул дверь и отпрыгнул от неё*"
-    scene coridorev at heartbeat_advanced  #поменять на ночной корридор
+    scene coridornight at heartbeat_advanced  #поменять на ночной корридор сменил
     with hpunch
     with vpunch
     "*Сердце бешено колотилось*"
