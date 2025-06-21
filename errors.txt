@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 82: expected python code
-    $
-     ^
+File "game/script.rpy", line 216: expected statement.
+    «Ладно, щас водички попить и…-»
+          ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Sat Jun 21 03:18:22 2025
+Sat Jun 21 22:55:46 2025
