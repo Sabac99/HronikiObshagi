@@ -14,18 +14,18 @@ define mc = Character('Рома')
 define a = Character('Алиса')
 
 # Определение Бэков.
-image bedroom_Irk = im.Scale("bg upd/irk.png",1920,1080)
+image bedroom_Irk = im.Scale("bg/bg upd/irk.png",1920,1080)
 
 
-#просто обновить картинки, меняя только файлфы в папке, оставляя такое же название
-image coridorday = im.Scale("bg upd/kor dat.png",1920,1080) #Коридор вечер
-image coridornight = im.Scale("bg upd/kor night.png",1920,1080) #Коридор вечер
+#просто обновить картинки, меняя только файлфы в папке, оставляя такое же название ai на картинке я уберу
+image coridorday = im.Scale("bg/bg upd/kor dat.png",1920,1080) #Коридор вечер
+image coridornight = im.Scale("bg/bg upd/kor night.png",1920,1080) #Коридор вечер
 
-image room_511_night = im.Scale("bg upd/511 night.png",1920,1080)
-image room_511_day = im.Scale("bg upd/511 day.png",1920,1080)
+image room_511_night = im.Scale("bg/bg upd/511 night.png",1920,1080)
+image room_511_day = im.Scale("bg/bg upd/511 day.png",1920,1080)
 
-image room_510_bed_night  = im.Scale("bg upd/510 day.png",1920,1080) #сменить на ночной
-image room_510_bed_day  = im.Scale("bg upd/510 day.png",1920,1080)
+image room_510_bed_night  = im.Scale("bg/bg upd/510 day.png",1920,1080) #сменить на ночной
+image room_510_bed_day  = im.Scale("bg/bg upd/510 day.png",1920,1080)
 # Определение Спрайтов Алисы.
 image Alice_normal = im.Scale("sprites/Alice/Alice_normal.png",559,946)
 image Alice_smile = im.Scale("sprites/Alice/Alice_smile.png",559,946)
