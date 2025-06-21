@@ -15,9 +15,9 @@ define a = Character('Алиса')
 
 # Определение Бэков.
 image bedroom_Irk = im.Scale("bg/bedroom_Irk.png",1920,1080)
-image corridor = im.Scale("bg/corridor.png",1920,1080)
+image coridorev = im.Scale("bg/coridorev.png",1920,1080) #Коридор вечер
 image room_511 = im.Scale("bg/room_511.png",1920,1080)
-
+image room_510_bed_night  = im.Scale("bg/room_510_bed_night.png",1920,1080)
 # Определение Спрайтов Алисы.
 image Alice_normal = im.Scale("sprites/Alice/Alice_normal.png",559,946)
 image Alice_smile = im.Scale("sprites/Alice/Alice_smile.png",559,946)
@@ -113,9 +113,10 @@ label start:
     "Политех значит... Ну, не то чтобы у меня было много вариантов..."
     "Ладно, посмотрим, что тут у нас..."
 
-    ##Картинка-переход (дата)
+    scene black with dissolve
+    "Картинка-переход 10.07.2024, родной город Романа"
     #10.07.2024, родной город ГГ
-
+    scene bedroom_Irk with dissolve
     #На экране ноутбука рандомный видосик с ютуба
     "*бззз*"
     #with *Звук уведомления*
@@ -127,6 +128,7 @@ label start:
     "Ладно... Видимо придется все же сделать выбор."
     menu:
         "ТПУ":
+            scene black with dissolve
             jump TPU3108
         "ТУСУР":
             sistem "НУ И ВАЛИ В СВОЙ ТУСУР."
@@ -139,8 +141,9 @@ label start:
 
 # Игрок выбрал поступить в ТПУ, 31.08:
 label TPU3108:
+    "Картинка-переход 31.08.2024, Томск, общежитие №14"
     $ rep = 0
-    scene corridor with dissolve #ЗАГЛУШКА
+    scene coridorev with dissolve #поменять на день
     kom "Так, смотри, дубликат ключа надо сделать. Оригиналом. Я его дам.\
     Дубликат делает ключник. Он находится возле шаурмечки. Ключнику нужны деньги. Денег я не дам."
     "У меня стойкое ощущение дежавю..."
@@ -192,13 +195,14 @@ label TPU3108:
     mc "Привет, новая жизнь."
     scene room_511 with dissolve #ЗАГЛУШКА
     if rep == 1:
+        scene black with dissolve
         jump Sep1time419Alice
     else:
         return
 label Sep1time419Alice:
+    "Картинка-переход 01.09.2024, Общежитие №14, комната 510"
     scene room_510_bed_night with dissolve
     mc "Агх..."
-    hide room_510_bed_night
     scene room_510_bed_night at heartbeat_advanced
     "*Невольно, мои руки моментально прикоснулись к голове*"
     mc "Нда... Видать вчера я все-таки перебрал..."
@@ -206,25 +210,22 @@ label Sep1time419Alice:
     "*Мои глаза пробежались по комнате*"
     mc "А, точно..."
     "*Голову, кажется, стало потихноньку отпускать*"
-    hide room_510_bed_night at heartbeat_advanced
+
     scene room_510_bed_night
     "*Я заметил Алису, мирно посапывающую в своей постели*"
     "*Достав свой телефон я посмотрел на красующиеся там цифры. 4.19*"
     "*Аккуратно, чтобы не разбудить свою новую знакомую, я поднялся с кровати и побрел в нашу с парнями комнату*"
+    scene coridorev with dissolve  #поменять на ночной корридор
     "Интересный у меня первый день в этом городе получился, ничего не скажешь…"
-    hide room_510_bed_night
-    scene corridor_night with dissolve
-    hide room_510_bed_night with dissolve
     scene black
     "Ладно, щас водички попить и…-"
     scene room_511_night_blood
-    "Ну заглушка((("
     mc "БЛЯТЬ!"
     "*За дверью, я узрел ужасающую картину: Комната была в полнейшем беспорядке, на стенах была размазана кровь, а на полу начерчена пентаграмма*"
     "*Я быстро захлопнул дверь и отпрыгнул от неё*"
-    hide room_511_night_blood
+    scene coridorev at heartbeat_advanced  #поменять на ночной корридор
     with hpunch
     with vpunch
-    scene corridor_night at heartbeat_advanced
-    "ЧТО. ЗА. ХУЙНЯ."
+    "*Сердце бешено колотилось*"
+    "КАКОГО!?"
     #play sound "heartbeat.wav" loop
