@@ -18,8 +18,8 @@ image bedroom_Irk = im.Scale("bg/bg upd/irk.png",1920,1080)
 
 
 #просто обновить картинки, меняя только файлфы в папке, оставляя такое же название ai на картинке я уберу
-image coridorday = im.Scale("bg/bg upd/kor dat.png",1920,1080) #Коридор вечер
-image coridornight = im.Scale("bg/bg upd/kor night.png",1920,1080) #Коридор вечер
+image coridorday = im.Scale("bg/coridorev.png",1920,1080) #Коридор день
+image coridornight = im.Scale("bg/coridorev.png",1920,1080) #Коридор ночь
 
 image room_511_night = im.Scale("bg/bg upd/511 night.png",1920,1080)
 image room_511_day = im.Scale("bg/bg upd/511 day.png",1920,1080)
@@ -211,14 +211,12 @@ label Sep1time419Alice:
     "Картинка-переход 01.09.2024, Общежитие №14, комната 510"
     scene room_510_bed_day with dissolve
     mc "Агх..."
-    scene room_510_bed_day at heartbeat_advanced
     "*Невольно, мои руки моментально прикоснулись к голове*"
     mc "Нда... Видать вчера я все-таки перебрал..."
     mc "Где это я? Сколько сейчас времени?"
     "*Мои глаза пробежались по комнате*"
     mc "А, точно..."
     "*Голову, кажется, стало потихноньку отпускать*"
-
     scene room_510_bed_night
     "*Я заметил Алису, мирно посапывающую в своей постели*"
     "*Достав свой телефон я посмотрел на красующиеся там цифры. 4.19*"
