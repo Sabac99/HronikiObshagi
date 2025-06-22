@@ -26,14 +26,15 @@ define kl_nvl = Character("Елена Васильевна", kind=nvl)
 image bedroom_Irk = im.Scale("bg/bedroom_Irk.png",1920,1080)
 
 #просто обновить картинки, меняя только файлы в папке, оставляя такое же название. ai на картинке я уберу
-image coridorday = im.Scale("bg/bg upd/kor dat.png",1920,1080) #Коридор день
-image coridornight = im.Scale("bg/bg upd/kor night.png",1920,1080) #Коридор ночьR
+image coridorday = im.Scale("bg/bg upd/coridor_day.png",1920,1080) #Коридор день
+image coridorev = im.Scale("bg/coridor_ev.png",1920,1080) #Коридор день
+image coridornight = im.Scale("bg/bg upd/coridor_night.png",1920,1080) #Коридор ночь
 
-image room_511_night = im.Scale("bg/bg upd/511 night.png",1920,1080)
-image room_511_day = im.Scale("bg/bg upd/511 day.png",1920,1080)
+image room_511_night = im.Scale("bg/bg upd/511_night.png",1920,1080)
+image room_511_day = im.Scale("bg/bg upd/511_day.png",1920,1080)
 
-image room_510_bed_night  = im.Scale("bg/bg upd/510 day.png",1920,1080) #сменить на ночной
-image room_510_bed_day  = im.Scale("bg/bg upd/510 day.png",1920,1080)
+image room_510_bed_night  = im.Scale("bg/bg upd/510_day.png",1920,1080) #сменить на ночной
+image room_510_bed_day  = im.Scale("bg/bg upd/510_day.png",1920,1080)
 # Определение Спрайтов Алисы.
 image Alice_normal = im.Scale("sprites/Alice/Alice_normal.png",559,946)
 image Alice_smile = im.Scale("sprites/Alice/Alice_smile.png",559,946)
@@ -163,7 +164,7 @@ label start:
 label TPU3108:
     "Картинка-переход 31.08.2024, Томск, общежитие №14"
     $ rep = 0
-    scene coridorday with dissolve #поменять на день
+    scene coridorev with dissolve #поменять на день
     kom "Так, смотри, дубликат ключа надо сделать. Оригиналом. Я его дам.\
     Дубликат делает ключник. Он находится возле шаурмечки. Ключнику нужны деньги. Денег я не дам."
     "У меня стойкое ощущение дежавю..."
@@ -242,7 +243,8 @@ label Sep1time419Alice:
     "Интересный у меня первый день в этом городе получился, ничего не скажешь…"
     scene black
     "Ладно, щас водички попить и…-"
-    scene room_511_night_blood
+    scene room_511_night
+    "Это заглушка, нормально нарисовать ЦГ не получилось увы"
     play music "spook.ogg"
     mc "AAAAAA...-"
     "*За дверью, я узрел ужасающую картину: Комната была в полнейшем беспорядке, на стенах была размазана кровь, а на полу начерчена пентаграмма*"
