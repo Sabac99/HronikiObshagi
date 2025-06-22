@@ -26,8 +26,8 @@ define kl_nvl = Character("Елена Васильевна", kind=nvl)
 image bedroom_Irk = im.Scale("bg/bedroom_Irk.png",1920,1080)
 
 #просто обновить картинки, меняя только файлы в папке, оставляя такое же название. ai на картинке я уберу
-image coridorday = im.Scale("bg/coridorev.png",1920,1080) #Коридор день
-image coridornight = im.Scale("bg/coridorev.png",1920,1080) #Коридор ночь
+image coridorday = im.Scale("bg/bg upd/kor dat.png",1920,1080) #Коридор день
+image coridornight = im.Scale("bg/bg upd/kor night.png",1920,1080) #Коридор ночьR
 
 image room_511_night = im.Scale("bg/bg upd/511 night.png",1920,1080)
 image room_511_day = im.Scale("bg/bg upd/511 day.png",1920,1080)
