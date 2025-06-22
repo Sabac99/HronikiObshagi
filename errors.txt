@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 121: expected statement.
-    nvl_clear
-             ^
+File "game/script.rpy", line 93: ATL statement contains two expressions in a row; is one of them a misspelled property? If not, separate them with pass.
+    show gradient:
+                 ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Sun Jun 22 20:42:04 2025
+Mon Jun 23 01:51:30 2025

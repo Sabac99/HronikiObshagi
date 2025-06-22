@@ -23,18 +23,42 @@ define Vanya_nvl = Character("Ваня", kind=nvl, callback=Phone_ReceiveSound)
 define kl_nvl = Character("Елена Васильевна", kind=nvl)
 
 # Определение Бэков.
-image bedroom_Irk = im.Scale("bg/bedroom_Irk.png",1920,1080)
+image bedroom_Irk = "bg/bedroom_Irk.png"
 
 #просто обновить картинки, меняя только файлы в папке, оставляя такое же название. ai на картинке я уберу
 image coridorday = im.Scale("bg/bg upd/coridor_day.png",1920,1080) #Коридор день
 image coridorev = im.Scale("bg/coridor_ev.png",1920,1080) #Коридор день
 image coridornight = im.Scale("bg/bg upd/coridor_night.png",1920,1080) #Коридор ночь
 
-image room_511_night = im.Scale("bg/bg upd/511_night.png",1920,1080)
+image room_511_night = im.Scale("bg/bg upd/511_night.png", 1920, 1080)
 image room_511_day = im.Scale("bg/bg upd/511_day.png",1920,1080)
 
 image room_510_bed_night  = im.Scale("bg/bg upd/510_day.png",1920,1080) #сменить на ночной
 image room_510_bed_day  = im.Scale("bg/bg upd/510_day.png",1920,1080)
+
+
+#градиент и виньетки
+
+image black = Solid("#0008")
+image gradient = "bg/bg upd/blackgradient.png"  # Ваш файл градиента
+
+#     im.MatrixColor(
+#         "bg/bg upd/blackgradient.png",  # Исходное изображение
+#         # Умножаем альфа-канал (чтобы черные области стали прозрачными)
+#         # и добавляем затемнение (например, умножая на 0.5 в темных зонах)
+#         matrixcolor Matrix(
+#             # R, G, B, A (альфа)
+#             [1.0, 0.0, 0.0, 0.0,  # Красный канал
+#             0.0, 1.0, 0.0, 0.0,   # Зеленый канал
+#             0.0, 0.0, 1.0, 0.0,   # Синий канал
+#             0.0, 0.0, 0.0, 0.5]  # Альфа-канал (уменьшаем прозрачность там, где маска черная)
+#         )
+#     )
+#     # Делаем плавное появление
+#     alpha 0.0
+#     linear 2.0 alpha 1.0
+#     repeat
+
 # Определение Спрайтов Алисы.
 image Alice_normal = im.Scale("sprites/Alice/Alice_normal.png",559,946)
 image Alice_smile = im.Scale("sprites/Alice/Alice_smile.png",559,946)
@@ -65,29 +89,30 @@ transform heartbeat_advanced:
         ease 0.05 xoffset -3
         ease 0.05 xoffset 0
         repeat
-    parallel:
-        # Создаем черный круг с прозрачным центром
-        mesh True
-        #shader """
-            #vec4 vignette(vec2 uv) {
-                #float d = distance(uv, vec2(0.5, 0.5));
-                #float radius = 0.5;
-                #float softness = 0.02;
-                #float alpha = smoothstep(radius, radius-softness, d);
-                #return vec4(0.0, 0.0, 0.0, (1.0 - alpha) * 0.7);
-            #}
-            #uniform float u_alpha;
-            #vec4 effect(vec4 color, Image texture, vec2 uv, vec2 screen_coords) {
-                #return vignette(uv) * u_alpha;
-            #}
-        #"""
-        alpha 0.0  # Начальная прозрачность
-        # Синхронизация с сердцебиением
-        ease 0.15 alpha 0.4  # Пик затемнения при ударе
-        ease 0.3 alpha 0.1   # Ослабление
-        ease 0.15 alpha 0.3  # Второй удар
-        ease 0.4 alpha 0.0   # Возврат к прозрачности
-        repeat
+
+#     parallel:
+#         # Создаем черный круг с прозрачным центром
+#         mesh True
+#         #shader """
+#             #vec4 vignette(vec2 uv) {
+#                 #float d = distance(uv, vec2(0.5, 0.5));
+#                 #float radius = 0.5;
+#                 #float softness = 0.02;
+#                 #float alpha = smoothstep(radius, radius-softness, d);
+#                 #return vec4(0.0, 0.0, 0.0, (1.0 - alpha) * 0.7);
+#             #}
+#             #uniform float u_alpha;
+#             #vec4 effect(vec4 color, Image texture, vec2 uv, vec2 screen_coords) {
+#                 #return vignette(uv) * u_alpha;
+#             #}
+#         #"""
+#         alpha 0.0  # Начальная прозрачность
+#         #Синхронизация с сердцебиением
+#         ease 0.15 alpha 0.4  # Пик затемнения при ударе
+#         ease 0.3 alpha 0.1   # Ослабление
+#         ease 0.15 alpha 0.3  # Второй удар
+#         ease 0.4 alpha 0.0   # Возврат к прозрачности
+#         repeat
 
     #scene ***** at heartbeat_advanced
     #play sound "heartbeat.wav" loop
@@ -250,8 +275,14 @@ label Sep1time419Alice:
     "*За дверью, я узрел ужасающую картину: Комната была в полнейшем беспорядке, на стенах была размазана кровь, а на полу начерчена пентаграмма*"
     "*Я быстро захлопнул дверь и отпрыгнул от неё*"
     scene coridornight at heartbeat_advanced  #поменять на ночной корридор
+    show gradient:
+        alpha 0.0
+        linear 0.6 alpha 0.5
+        linear 0.6 alpha 0.0
+        repeat
     with hpunch
     with vpunch
+
     "*Сердце бешено колотилось*"
     "КАКОГО!?"
 

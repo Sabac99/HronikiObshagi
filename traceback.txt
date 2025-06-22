@@ -1,24 +1,48 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While running game code:
-  File "game/script.rpy", line 110, in script
-    nvl_kl "Ребята, пришли результаты ЕГЭ по информатике! Хвастайтесь!"
-Exception: Sayer 'nvl_kl' is not defined.
+Compiling ATL code at game/script.rpy:45
+  File "game/script.rpy", line 277, in script
+    show vignette
+  File "game/script.rpy", line 49, in <module>
+    matrixcolor(
+NameError: name 'matrixcolor' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 110, in script
-    nvl_kl "Ребята, пришли результаты ЕГЭ по информатике! Хвастайтесь!"
-  File "C:\Apps\RenPy\renpy-8.3.4-sdk\renpy\ast.py", line 2586, in execute
-    Say.execute(self)
-  File "C:\Apps\RenPy\renpy-8.3.4-sdk\renpy\ast.py", line 583, in execute
-    who = eval_who(self.who, self.who_fast)
-  File "C:\Apps\RenPy\renpy-8.3.4-sdk\renpy\ast.py", line 472, in eval_who
-    raise Exception("Sayer '%s' is not defined." % who)
-Exception: Sayer 'nvl_kl' is not defined.
+  File "game/script.rpy", line 277, in script
+    show vignette
+  File "Q:\renpypypy\renpy-8.3.7-sdk\renpy\ast.py", line 1124, in execute
+    show_imspec(self.imspec, atl=getattr(self, "atl", None))
+  File "Q:\renpypypy\renpy-8.3.7-sdk\renpy\ast.py", line 1087, in show_imspec
+    renpy.config.show(name,
+  File "Q:\renpypypy\renpy-8.3.7-sdk\renpy\exports\displayexports.py", line 477, in show
+    if not base.find_target() and renpy.config.missing_show:
+  File "Q:\renpypypy\renpy-8.3.7-sdk\renpy\display\image.py", line 421, in find_target
+    self.target = target._duplicate(a)
+  File "Q:\renpypypy\renpy-8.3.7-sdk\renpy\display\transform.py", line 1194, in _duplicate
+    rv.take_execution_state(self)
+  File "Q:\renpypypy\renpy-8.3.7-sdk\renpy\atl.py", line 551, in take_execution_state
+    block = self.compile()
+  File "Q:\renpypypy\renpy-8.3.7-sdk\renpy\atl.py", line 723, in compile
+    block = self.atl.compile(self.context)
+  File "Q:\renpypypy\renpy-8.3.7-sdk\renpy\atl.py", line 925, in compile
+    statements = [ i.compile(ctx) for i in self.statements ]
+  File "Q:\renpypypy\renpy-8.3.7-sdk\renpy\atl.py", line 925, in <listcomp>
+    statements = [ i.compile(ctx) for i in self.statements ]
+  File "Q:\renpypypy\renpy-8.3.7-sdk\renpy\atl.py", line 1232, in compile
+    child = ctx.eval(expr)
+  File "Q:\renpypypy\renpy-8.3.7-sdk\renpy\atl.py", line 387, in eval
+    return renpy.python.py_eval(expr, locals=self.context)
+  File "Q:\renpypypy\renpy-8.3.7-sdk\renpy\python.py", line 1218, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+  File "Q:\renpypypy\renpy-8.3.7-sdk\renpy\python.py", line 1211, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "game/script.rpy", line 49, in <module>
+    matrixcolor(
+NameError: name 'matrixcolor' is not defined
 
 Windows-10-10.0.19045 AMD64
 Ren'Py 8.3.7.25031702
 HronikiObshagi 0.0.1 pre-alpha-version
-Sun Jun 22 20:42:30 2025
+Mon Jun 23 01:32:52 2025
