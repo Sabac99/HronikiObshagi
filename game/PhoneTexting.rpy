@@ -100,10 +100,16 @@ screen nvl_phonetext(dialogue):
                 
                 #If this is the first message of the character, show an icon
                 if previous_d_who != d.who:
-                    if d.who == MC_Name:
-                        $ message_icon = "phone_send_icon.png"
+                    if d.who == "Рома":
+                        $ message_icon = "phone_Roman_icon.png"
+                    elif d.who == "Елена Васильевна":
+                        $ message_icon = "phone_kl_icon.png"
+                    elif d.who == "Ваня":
+                        $ message_icon = "phone_Vanya_icon.png"
                     else:
                         $ message_icon = "phone_received_icon.png"
+
+
 
                     add message_icon:
                         if d.current:
