@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 216: expected statement.
-    «Ладно, щас водички попить и…-»
-          ^
+File "game/script.rpy", line 121: expected statement.
+    nvl_clear
+             ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Sat Jun 21 22:55:46 2025
+Sun Jun 22 20:42:04 2025
