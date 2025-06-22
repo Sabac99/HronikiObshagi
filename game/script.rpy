@@ -243,6 +243,7 @@ label Sep1time419Alice:
     scene black
     "Ладно, щас водички попить и…-"
     scene room_511_night_blood
+    play music "spook.ogg"
     mc "AAAAAA...-"
     "*За дверью, я узрел ужасающую картину: Комната была в полнейшем беспорядке, на стенах была размазана кровь, а на полу начерчена пентаграмма*"
     "*Я быстро захлопнул дверь и отпрыгнул от неё*"
@@ -252,4 +253,5 @@ label Sep1time419Alice:
     "*Сердце бешено колотилось*"
     "КАКОГО!?"
 
-    #play sound "heartbeat.wav" loop
+    #stop music fadein (0.5)
+
