@@ -23,11 +23,11 @@ define Vanya_nvl = Character("Ваня", kind=nvl, callback=Phone_ReceiveSound)
 define kl_nvl = Character("Елена Васильевна", kind=nvl)
 
 # Определение Бэков.
-image bedroom_Irk = "bg/bedroom_Irk.png"
+image bedroom_Irk = im.Scale("bg/bedroom_Irk.png",1920,1080)
 
 #просто обновить картинки, меняя только файлы в папке, оставляя такое же название. ai на картинке я уберу
 image coridorday = im.Scale("bg/bg upd/coridor_day.png",1920,1080) #Коридор день
-image coridorev = im.Scale("bg/coridor_ev.png",1920,1080) #Коридор день
+image coridorev = im.Scale("bg/coridor_ev.png",1920,1080) #Коридор вечер
 image coridornight = im.Scale("bg/bg upd/coridor_night.png",1920,1080) #Коридор ночь
 
 image room_511_night = im.Scale("bg/bg upd/511_night.png", 1920, 1080)
@@ -39,7 +39,6 @@ image room_510_bed_day  = im.Scale("bg/bg upd/510_day.png",1920,1080)
 
 #градиент и виньетки
 
-image black = Solid("#0008")
 image gradient = "bg/bg upd/blackgradient.png"  # Ваш файл градиента
 
 #     im.MatrixColor(
@@ -169,8 +168,9 @@ label start:
     kl_nvl "Ребята, здравствуйте! Как у вас дела? В какие ВУЗы подали документы?"
     "Точно. Сегодня же оригиналы уже надо подать…"
     #На экране появляется заставка Госуслуг
+    "*Я открыл Госуслуги и начал проверять свои заявления в ВУЗы*"
     "Ну, как я и думал, о Москве можно и не мечтать..."
-    "А вот Томские ВУЗы ждут меня с распростертыми объятиями, ха..."
+    "А вот Томск ждет меня с распростертыми объятиями, ха..."
     "Ладно... Видимо придется все же сделать выбор."
     menu:
         "ТПУ":
@@ -219,7 +219,9 @@ label TPU3108:
             $ rep+=1
             a "Взаимно. Рома, не прощаюсь, думаю сегодня ещё увидимся."
             a "Галина Олеговна, жду вас у кабинета."
-            hide Alice_talk with moveoutright
+            hide Alice_talk
+            show Alice_normal
+            hide Alice_normal with moveoutright
             "*Алиса поспешно удалилась.*"
             "*Коменда одобрительно на меня посмотрела.*"
             mc "Галина Олеговна, я пойду. Мне ещё дубликат надо успеть сделать."
@@ -274,7 +276,7 @@ label Sep1time419Alice:
     mc "AAAAAA...-"
     "*За дверью, я узрел ужасающую картину: Комната была в полнейшем беспорядке, на стенах была размазана кровь, а на полу начерчена пентаграмма*"
     "*Я быстро захлопнул дверь и отпрыгнул от неё*"
-    scene coridornight at heartbeat_advanced  #поменять на ночной корридор
+    scene coridornight at heartbeat_advanced
     show gradient:
         alpha 0.0
         linear 0.6 alpha 0.5

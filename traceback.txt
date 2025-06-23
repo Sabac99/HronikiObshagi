@@ -1,48 +1,30 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-Compiling ATL code at game/script.rpy:45
-  File "game/script.rpy", line 277, in script
-    show vignette
-  File "game/script.rpy", line 49, in <module>
-    matrixcolor(
-NameError: name 'matrixcolor' is not defined
+While running game code:
+  File "game/script.rpy", line 271, in script
+    scene black with Pause
+Exception: Expected transition to return a displayable, not a <partial <class 'renpy.display.transition.NoTransition'> () {'old_widget': <renpy.display.layout.Fixed object at 0x0000000005b44580>, 'new_widget': <renpy.display.layout.Fixed object at 0x0000000005b44dc0>}>
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 277, in script
-    show vignette
-  File "Q:\renpypypy\renpy-8.3.7-sdk\renpy\ast.py", line 1124, in execute
-    show_imspec(self.imspec, atl=getattr(self, "atl", None))
-  File "Q:\renpypypy\renpy-8.3.7-sdk\renpy\ast.py", line 1087, in show_imspec
-    renpy.config.show(name,
-  File "Q:\renpypypy\renpy-8.3.7-sdk\renpy\exports\displayexports.py", line 477, in show
-    if not base.find_target() and renpy.config.missing_show:
-  File "Q:\renpypypy\renpy-8.3.7-sdk\renpy\display\image.py", line 421, in find_target
-    self.target = target._duplicate(a)
-  File "Q:\renpypypy\renpy-8.3.7-sdk\renpy\display\transform.py", line 1194, in _duplicate
-    rv.take_execution_state(self)
-  File "Q:\renpypypy\renpy-8.3.7-sdk\renpy\atl.py", line 551, in take_execution_state
-    block = self.compile()
-  File "Q:\renpypypy\renpy-8.3.7-sdk\renpy\atl.py", line 723, in compile
-    block = self.atl.compile(self.context)
-  File "Q:\renpypypy\renpy-8.3.7-sdk\renpy\atl.py", line 925, in compile
-    statements = [ i.compile(ctx) for i in self.statements ]
-  File "Q:\renpypypy\renpy-8.3.7-sdk\renpy\atl.py", line 925, in <listcomp>
-    statements = [ i.compile(ctx) for i in self.statements ]
-  File "Q:\renpypypy\renpy-8.3.7-sdk\renpy\atl.py", line 1232, in compile
-    child = ctx.eval(expr)
-  File "Q:\renpypypy\renpy-8.3.7-sdk\renpy\atl.py", line 387, in eval
-    return renpy.python.py_eval(expr, locals=self.context)
-  File "Q:\renpypypy\renpy-8.3.7-sdk\renpy\python.py", line 1218, in py_eval
-    return py_eval_bytecode(code, globals, locals)
-  File "Q:\renpypypy\renpy-8.3.7-sdk\renpy\python.py", line 1211, in py_eval_bytecode
-    return eval(bytecode, globals, locals)
-  File "game/script.rpy", line 49, in <module>
-    matrixcolor(
-NameError: name 'matrixcolor' is not defined
+  File "game/script.rpy", line 271, in script
+    scene black with Pause
+  File "C:\Apps\RenPy\renpy-8.3.4-sdk\renpy\ast.py", line 1374, in execute
+    renpy.exports.with_statement(trans, paired=paired)
+  File "C:\Apps\RenPy\renpy-8.3.4-sdk\renpy\exports\statementexports.py", line 257, in with_statement
+    return renpy.game.interface.do_with(trans, paired, clear=clear)
+  File "C:\Apps\RenPy\renpy-8.3.4-sdk\renpy\display\core.py", line 1581, in do_with
+    return self.interact(trans_pause=True,
+  File "C:\Apps\RenPy\renpy-8.3.4-sdk\renpy\display\core.py", line 2218, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "C:\Apps\RenPy\renpy-8.3.4-sdk\renpy\display\core.py", line 2669, in interact_core
+    trans = instantiate_transition(None, old_root, layers_root)
+  File "C:\Apps\RenPy\renpy-8.3.4-sdk\renpy\display\core.py", line 2583, in instantiate_transition
+    raise Exception("Expected transition to return a displayable, not a {!r}".format(trans))
+Exception: Expected transition to return a displayable, not a <partial <class 'renpy.display.transition.NoTransition'> () {'old_widget': <renpy.display.layout.Fixed object at 0x0000000005b44580>, 'new_widget': <renpy.display.layout.Fixed object at 0x0000000005b44dc0>}>
 
 Windows-10-10.0.19045 AMD64
 Ren'Py 8.3.7.25031702
 HronikiObshagi 0.0.1 pre-alpha-version
-Mon Jun 23 01:32:52 2025
+Mon Jun 23 14:46:51 2025
