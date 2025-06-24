@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 273: end of line expected.
-    jump Scene room_511_night
+File "game/script.rpy", line 92: ATL statement contains two expressions in a row; is one of them a misspelled property? If not, separate them with pass.
+    play sound "heartbeat.mp3" loop
                ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Mon Jun 23 14:34:00 2025
+Tue Jun 24 09:14:14 2025

@@ -31,6 +31,7 @@ image coridorev = im.Scale("bg/coridor_ev.png",1920,1080) #Коридор веч
 image coridornight = im.Scale("bg/bg upd/coridor_night.png",1920,1080) #Коридор ночь
 
 image room_511_night = im.Scale("bg/bg upd/511_night.png", 1920, 1080)
+image room_511_night_pent = ("bg/bg upd/511_night_pent.png")
 image room_511_day = im.Scale("bg/bg upd/511_day.png",1920,1080)
 
 image room_510_bed_night  = im.Scale("bg/bg upd/510_day.png",1920,1080) #сменить на ночной
@@ -123,10 +124,10 @@ label start:
     m "ДА КАКОЕ ЖЕ ТЫ НЕБЛАГОДАРНОЕ ГОВ-..."
     with hpunch
     with vpunch
-    # Звук хлопка дверью
+    play sound "door.mp3"
     "Как же мне это осточертело. Постоянно споры, ссоры. А главное, из-за всякой херни!"
     "Ох... ладно..."
-    #with Скрип стула
+
     play sound "vk.mp3"
     "*бззз*"
     nvl_narrator "11A"
@@ -269,14 +270,16 @@ label Sep1time419Alice:
     scene coridornight with dissolve  #поменять на ночной корридор
     "Интересный у меня первый день в этом городе получился, ничего не скажешь…"
     scene black
-    "Ладно, щас водички попить и…-"
-    scene room_511_night
-    "Это заглушка, нормально нарисовать ЦГ не получилось увы"
+    "Ладно, щас водички попить и…- {nw}"
+
+    scene room_511_night_pent
     play music "spook.ogg"
+    pause
     mc "AAAAAA...-"
     "*За дверью, я узрел ужасающую картину: Комната была в полнейшем беспорядке, на стенах была размазана кровь, а на полу начерчена пентаграмма*"
     "*Я быстро захлопнул дверь и отпрыгнул от неё*"
     scene coridornight at heartbeat_advanced
+    play sound "heartbeat.mp3" loop
     show gradient:
         alpha 0.0
         linear 0.6 alpha 0.5
