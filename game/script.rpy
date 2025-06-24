@@ -121,10 +121,12 @@ transform heartbeat_advanced:
 label start:
     ##Картинка-переход 17.06.2024, родной город ГГ
     scene bedroom_Irk with dissolve
+
     m "ДА КАКОЕ ЖЕ ТЫ НЕБЛАГОДАРНОЕ ГОВ-..."
+    play sound "door.mp3"
     with hpunch
     with vpunch
-    play sound "door.mp3"
+
     "Как же мне это осточертело. Постоянно споры, ссоры. А главное, из-за всякой херни!"
     "Ох... ладно..."
 
